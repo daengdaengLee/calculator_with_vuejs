@@ -1,7 +1,7 @@
 <template>
   <div id="cal-buttons">
     {{ testmsg }}
-    <cal-button></cal-button>
+    <cal-button :button-content="buttonContents[0]"></cal-button>
   </div>
 </template>
 
