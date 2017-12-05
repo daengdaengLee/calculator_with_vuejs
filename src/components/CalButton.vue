@@ -1,5 +1,5 @@
 <template>
-  <div class="CalButton">
+  <div class="CalButton" @click="clickButton()">
     {{ buttonContent }}
   </div>
 </template>
@@ -11,6 +11,11 @@ export default {
     buttonContent: {
       type: String,
       default() { return 'cal'; },
+    },
+  },
+  methods: {
+    clickButton() {
+      this.$emit('clickButton', this.buttonContent);
     },
   },
 };
