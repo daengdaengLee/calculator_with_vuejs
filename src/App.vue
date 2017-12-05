@@ -18,5 +18,12 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+#app {
+  padding: 5px;
+  border: 1px solid black;
+  background-color: darkgray;
+  box-sizing: border-box;
+  width: 214px;
+}
 </style>
