@@ -1,7 +1,13 @@
 <template>
   <div id="cal-buttons">
     {{ testmsg }}
-    <cal-button :button-content="buttonContents[0].content"></cal-button>
+    <cal-button
+      v-for="buttonContent in buttonContents"
+      :key="buttonContent.id"
+      :id="buttonContent.id"
+      :button-content="buttonContent.content"
+    >
+    </cal-button>
   </div>
 </template>
 
