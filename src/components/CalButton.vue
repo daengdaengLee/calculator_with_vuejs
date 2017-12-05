@@ -12,10 +12,14 @@ export default {
       type: String,
       default() { return 'cal'; },
     },
+    buttonId: {
+      type: Number,
+      default() { return 0; },
+    },
   },
   methods: {
     clickButton() {
-      this.$emit('click-button', { buttonContent: this.buttonContent });
+      this.$emit('click-button', { buttonId: this.buttonId, buttonContent: this.buttonContent });
     },
   },
 };
