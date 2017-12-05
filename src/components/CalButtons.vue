@@ -5,6 +5,7 @@
       :key="buttonContent.id"
       :id="buttonContent.id"
       :button-content="buttonContent.content"
+      :button-id="buttonContent.id"
       @click-button="clickCalButton"
     >
     </cal-button>
