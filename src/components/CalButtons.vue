@@ -26,7 +26,7 @@ export default {
 <style scoped>
 .CalButtons {
   border: 1px solid black;
-  width: 200px;
+  width: 202px;
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
