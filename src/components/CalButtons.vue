@@ -43,5 +43,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.CalButtons {
+  border: 1px solid black;
+  width: 200px;
+  display: flex;
+  flex-wrap: wrap;
+}
 </style>
