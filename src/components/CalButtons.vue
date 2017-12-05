@@ -29,5 +29,6 @@ export default {
   width: 200px;
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
 }
 </style>
