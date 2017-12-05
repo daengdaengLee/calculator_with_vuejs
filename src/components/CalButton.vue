@@ -1,6 +1,7 @@
 <template>
   <div id="cal-button">
     {{ testmsg }}
+    {{ buttonContent }}
   </div>
 </template>
 
