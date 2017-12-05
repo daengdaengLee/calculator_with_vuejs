@@ -12,8 +12,9 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 import CalButton from './CalButton';
+import Constant from '../Constant';
 
 export default {
   name: 'CalButtons',
@@ -21,11 +22,7 @@ export default {
   components: {
     CalButton,
   },
-  methods: {
-    clickCalButton(content) {
-      alert(content);
-    },
-  },
+  methods: mapActions([Constant.CLICK_CAL_BUTTON]),
 };
 </script>
 
