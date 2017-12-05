@@ -13,5 +13,14 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.CalDisplay {
+  width: 202px;
+  height: 40px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+}
 </style>
