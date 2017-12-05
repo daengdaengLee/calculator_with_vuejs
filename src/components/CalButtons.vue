@@ -1,5 +1,5 @@
 <template>
-  <div id="cal-buttons">
+  <div class="cal-buttons">
     {{ testmsg }}
     <cal-button
       v-for="buttonContent in buttonContents"
