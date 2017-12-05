@@ -25,6 +25,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid black;
+  box-sizing: border-box;
 }
 .CalButton:hover {
   background-color: black;
