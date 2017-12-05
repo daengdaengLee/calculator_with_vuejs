@@ -1,28 +1,33 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <cal-display></cal-display>
+    <cal-buttons></cal-buttons>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import CalDisplay from './components/CalDisplay';
+import CalButtons from './components/CalButtons';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
+    CalDisplay,
+    CalButtons,
   },
 };
 </script>
 
-<style>
+<style scoped>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  padding: 5px;
+  border: 1px solid black;
+  background-color: darkgray;
+  box-sizing: border-box;
+  width: 214px;
+  position: relative;
+  left: 50%;
+  margin-left: -107px;
+  top: 200px;
 }
 </style>
