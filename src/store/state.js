@@ -17,5 +17,6 @@ export default {
     { id: 14, content: '=' },
     { id: 10, content: '+' },
   ],
-  testmsg: 'display test',
+  currentInputType: 'init',
+  calArray: [],
 };
