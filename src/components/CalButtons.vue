@@ -5,6 +5,7 @@
       :key="buttonContent.id"
       :id="buttonContent.id"
       :button-content="buttonContent.content"
+      @click-button="clickCalButton"
     >
     </cal-button>
   </div>
@@ -19,6 +20,11 @@ export default {
   computed: mapState(['buttonContents']),
   components: {
     CalButton,
+  },
+  methods: {
+    clickCalButton(content) {
+      alert(content);
+    },
   },
 };
 </script>
