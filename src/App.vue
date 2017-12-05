@@ -25,5 +25,9 @@ export default {
   background-color: darkgray;
   box-sizing: border-box;
   width: 214px;
+  position: relative;
+  left: 50%;
+  margin-left: -107px;
+  top: 200px;
 }
 </style>
