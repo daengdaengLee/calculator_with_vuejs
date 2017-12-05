@@ -22,5 +22,6 @@ export default {
   align-items: center;
   justify-content: flex-end;
   box-sizing: border-box;
+  background-color: white;
 }
 </style>
