@@ -1,6 +1,5 @@
 <template>
   <div class="CalButtons">
-    {{ testmsg }}
     <cal-button
       v-for="buttonContent in buttonContents"
       :key="buttonContent.id"
@@ -18,7 +17,6 @@ export default {
   name: 'CalButtons',
   data() {
     return {
-      testmsg: 'CalButtons component',
       buttonContents: [
         { id: 7, content: '7' },
         { id: 8, content: '8' },
