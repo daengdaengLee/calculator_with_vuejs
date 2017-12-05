@@ -1,6 +1,5 @@
 <template>
   <div class="CalButton">
-    {{ testmsg }}
     {{ buttonContent }}
   </div>
 </template>
@@ -14,11 +13,20 @@ export default {
       default() { return 'cal'; },
     },
   },
-  data() {
-    return { testmsg: 'CalButton component' };
-  },
 };
 </script>
 
-<style>
+<style scoped>
+.CalButton {
+  background-color: gray;
+  color: white;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.CalButton:hover {
+  background-color: black;
+}
 </style>
