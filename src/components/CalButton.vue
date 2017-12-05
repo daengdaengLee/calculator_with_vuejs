@@ -15,7 +15,7 @@ export default {
   },
   methods: {
     clickButton() {
-      this.$emit('clickButton', this.buttonContent);
+      this.$emit('click-button', this.buttonContent);
     },
   },
 };
