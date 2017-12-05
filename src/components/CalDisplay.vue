@@ -1,17 +1,15 @@
 <template>
   <div class="CalDisplay">
-    {{ testmsg }}
+    {{ calDisplayNum }}
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'CalDisplay',
-  data() {
-    return {
-      testmsg: 'CalDisplay component',
-    };
-  },
+  computed: mapGetters(['calDisplayNum']),
 };
 </script>
 
