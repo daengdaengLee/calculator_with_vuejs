@@ -1,33 +1,24 @@
 <template>
   <div id="app">
-    <cal-display></cal-display>
-    <cal-buttons></cal-buttons>
+    <calculator></calculator>
+    <app-footer :user-url="userUrl" :code-repo-url="codeRepoUrl"></app-footer>
   </div>
 </template>
 
 <script>
-import CalDisplay from './components/CalDisplay';
-import CalButtons from './components/CalButtons';
+import { mapState } from 'vuex';
+import Calculator from './components/Calculator';
+import AppFooter from './components/AppFooter';
 
 export default {
   name: 'app',
+  computed: mapState(['userUrl', 'codeRepoUrl']),
   components: {
-    CalDisplay,
-    CalButtons,
+    Calculator,
+    AppFooter,
   },
 };
 </script>
 
-<style scoped>
-#app {
-  padding: 5px;
-  border: 1px solid black;
-  background-color: darkgray;
-  box-sizing: border-box;
-  width: 214px;
-  position: relative;
-  left: 50%;
-  margin-left: -107px;
-  top: 200px;
-}
+<style>
 </style>

@@ -19,4 +19,6 @@ export default {
   ],
   currentInputType: 'init',
   calArray: [],
+  userUrl: 'https://daengdaenglee.github.io/',
+  codeRepoUrl: 'https://github.com/daengdaengLee/calculator_with_vuejs',
 };
