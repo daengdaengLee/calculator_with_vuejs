@@ -1,7 +1,7 @@
 import Constant from '../Constant';
 
 export default {
-  [Constant.CLICK_CAL_BUTTON]: (store, payload) => {
+  [Constant('CLICK_CAL_BUTTON')]: (store, payload) => {
     // payload = { buttonId: Number, buttonContent: String }
     let type;
     switch (payload.buttonId) {
@@ -30,16 +30,16 @@ export default {
     }
     switch (type) {
       case 'number':
-        store.commit(Constant.CLICK_NUM_BUTTON, { content: payload.buttonContent });
+        store.commit(Constant('CLICK_NUM_BUTTON'), { content: payload.buttonContent });
         break;
       case 'plus': case 'minus': case 'multiplication': case 'division':
-        store.commit(Constant.CLICK_OPERATOR_BUTTON, { type, content: payload.buttonContent });
+        store.commit(Constant('CLICK_OPERATOR_BUTTON'), { type, content: payload.buttonContent });
         break;
       case 'equal':
-        store.commit(Constant.CLICK_EQUAL_BUTTON);
+        store.commit(Constant('CLICK_EQUAL_BUTTON'));
         break;
       case 'clear':
-        store.commit(Constant.CLICK_CLEAR_BUTTON);
+        store.commit(Constant('CLICK_CLEAR_BUTTON'));
         break;
       default:
     }
