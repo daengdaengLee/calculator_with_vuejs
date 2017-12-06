@@ -23,7 +23,7 @@ export default {
   components: {
     CalButton,
   },
-  methods: mapActions([Constant.CLICK_CAL_BUTTON]),
+  methods: mapActions([Constant('CLICK_CAL_BUTTON')]),
 };
 </script>
 
