@@ -1,5 +1,5 @@
 <template>
-  <div class="calculator">
+  <div class="Calculator">
     <cal-display></cal-display>
     <cal-buttons></cal-buttons>
   </div>
