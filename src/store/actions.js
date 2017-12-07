@@ -49,6 +49,7 @@ export default {
         store.commit(Constant('CLICK_OPERATOR_BUTTON'), { type, content: payload.buttonContent });
         break;
       case 'equal':
+        // currentInputType: number, init 가능 / operator, dot 불가능
         store.commit(Constant('CLICK_EQUAL_BUTTON'));
         break;
       case 'all clear':
