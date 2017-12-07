@@ -37,12 +37,15 @@ export default {
     }
     switch (type) {
       case 'number':
+        // currentInputType: init, number, operator, dot 가능
         store.commit(Constant('CLICK_NUM_BUTTON'), { content: payload.buttonContent });
         break;
       case 'dot':
+        // currentInputType: number 가능 / init, operator, dot 불가능
         store.commit(Constant('CLICK_DOT_BUTTON'));
         break;
       case 'plus': case 'minus': case 'multiplication': case 'division':
+        // currentInputType: number 가능 / init, operator, dot 불가능
         store.commit(Constant('CLICK_OPERATOR_BUTTON'), { type, content: payload.buttonContent });
         break;
       case 'equal':
