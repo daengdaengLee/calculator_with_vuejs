@@ -35,4 +35,15 @@ export default {
     storeState.equalButton = false;
     storeState.error = false;
   },
+  [Constant('CE_BUTTON')]: (state) => {
+    const storeState = state;
+    storeState.calArray.pop();
+    if (storeState.calArray.length > 0) {
+      storeState.currentInputType = storeState.calArray[storeState.calArray.length - 1].type;
+    } else {
+      storeState.currentInputType = 'init';
+    }
+    storeState.equalButton = false;
+    storeState.error = false;
+  },
 };
