@@ -21,6 +21,27 @@ export default {
     }
   },
   calResult(state) {
-    return state.equalButton;
+    if (state.equalButton) {
+      let result = Number(state.calArray[0].content);
+      for (let i = 0, len = state.calArray.length; i < len; i += 1) {
+        switch (state.calArray[i].type) {
+          case 'plus':
+            result += Number(state.calArray[i + 1].content);
+            break;
+          case 'minus':
+            result -= Number(state.calArray[i + 1].content);
+            break;
+          case 'multiplication':
+            result *= Number(state.calArray[i + 1].content);
+            break;
+          case 'division':
+            result /= Number(state.calArray[i + 1].content);
+            break;
+          default:
+        }
+      }
+      return result;
+    }
+    return '0';
   },
 };
