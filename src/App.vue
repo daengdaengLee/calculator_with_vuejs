@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <calculator></calculator>
+    <h1 class="CalHeading">Web Calculator</h1>
+    <calculator class="Cal"></calculator>
     <app-footer :user-url="userUrl" :code-repo-url="codeRepoUrl"></app-footer>
   </div>
 </template>
@@ -68,5 +69,26 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+html, body, #app {
+  height: 100%;
+}
+</style>
+
+<style scoped>
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#app .CalHeading {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  width: 250px;
+  text-align: center;
+}
+#app .Cal {
+  margin-bottom: 20px;
 }
 </style>

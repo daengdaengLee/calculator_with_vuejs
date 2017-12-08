@@ -1,6 +1,6 @@
 <template>
   <div class="CalButtons">
-    <div class="CalRow">
+    <div class="CalRow FirstRow">
       <cal-button
         :button-id="buttonContents.id17.id"
         :button-content="buttonContents.id17.content"
@@ -139,7 +139,19 @@ export default {
 </script>
 
 <style scoped>
-.CalRow {
+.CalButtons {
+  border: 1px solid black;
+  box-sizing: border-box;
+  width: 230px;
+  height: 280px;
+  background-color: darkgray;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.CalButtons .CalRow {
+  display: flex;
+  width: 200px;
 }
 </style>
