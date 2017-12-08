@@ -1,28 +1,26 @@
 export default {
+  calDisplayExpression(state) {
+    if (state.calArray.length === 0) {
+      return '0';
+    }
+    return state.calArray.reduce((accumulator, currentValue) => accumulator + currentValue.content, '');
+  },
   calDisplayNum(state) {
-    let result;
-    switch (state.currentInputType) {
-      case 'init':
-        result = 0;
-        break;
-      case 'number': case 'operator':
-        result = state.calArray[state.calArray.length - 1].content;
-        break;
+    switch (state.calArray.length) {
+      case 0:
+        return '0';
+      case 1:
+        return state.calArray[0].content;
       default:
-        for (let i = 0, len = state.calArray.length; i < len; i += 1) {
-          if (i === 0) {
-            result = Number(state.calArray[i].content);
-          } else if (state.calArray[i].type === 'plus') {
-            result += Number(state.calArray[i + 1].content);
-          } else if (state.calArray[i].type === 'minus') {
-            result -= Number(state.calArray[i + 1].content);
-          } else if (state.calArray[i].type === 'multiplication') {
-            result *= Number(state.calArray[i + 1].content);
-          } else if (state.calArray[i].type === 'division') {
-            result /= Number(state.calArray[i + 1].content);
-          }
+        switch (state.calArray[state.calArray.length - 1].type) {
+          case 'number':
+            return state.calArray[state.calArray.length - 1].content;
+          default:
+            return state.calArray[state.calArray.length - 2].content;
         }
     }
-    return result;
+  },
+  calResult(state) {
+    return state.equalButton;
   },
 };

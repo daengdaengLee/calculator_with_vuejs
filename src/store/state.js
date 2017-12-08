@@ -19,11 +19,10 @@ export default {
     id17: { id: 17, content: 'AC' },
     id18: { id: 18, content: 'CE' },
   },
-  currentInputType: 'init', // init, number, operator, dot 중 하나
+  currentInputType: 'init', // init, number, minus, plus, multiplication, division, dot 중 하나
   calArray: [], // { type: String, content: String }
-  displayNum: '0', // String 상태 유지
-  calNum: 0, // Number 상태 유지
-  currentOperator: 'none', // none, plus, minus, multiplication, division 중 하나
+  equalButton: false,
+  error: false,
   userUrl: 'https://daengdaenglee.github.io/',
   codeRepoUrl: 'https://github.com/daengdaengLee/calculator_with_vuejs',
 };

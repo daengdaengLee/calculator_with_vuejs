@@ -37,26 +37,59 @@ export default {
     }
     switch (type) {
       case 'number':
-        // currentInputType: init, number, operator, dot 가능
-        store.commit(Constant('CLICK_NUM_BUTTON'), { content: payload.buttonContent });
+        // currentInputType: init, number, plus, minus, multiplication, division, dot 가능
+        switch (store.state.currentInputType) {
+          case 'init': case 'plus': case 'minus': case 'multiplication': case 'division':
+            store.commit(Constant('ADD_BUTTON'), { type, content: payload.buttonContent });
+            break;
+          default:
+            store.commit(Constant('MERGE_BUTTON'), { type, content: payload.buttonContent });
+        }
         break;
       case 'dot':
-        // currentInputType: number 가능 / init, operator, dot 불가능
-        store.commit(Constant('CLICK_DOT_BUTTON'));
+        // currentInputType: number 가능 / init, plus, minus, multiplication, division, dot 불가능
+        switch (store.state.currentInputType) {
+          case 'number':
+            store.commit(Constant('MERGE_BUTTON'), { type, content: payload.buttonContent });
+            break;
+          default:
+            store.commit(Constant('ERROR'));
+        }
         break;
       case 'plus': case 'minus': case 'multiplication': case 'division':
-        // currentInputType: number 가능 / init, operator, dot 불가능
-        store.commit(Constant('CLICK_OPERATOR_BUTTON'), { type, content: payload.buttonContent });
+        // currentInputType: number 가능 / init, plus, minus, multiplication, division, dot 불가능
+        switch (store.state.currentInputType) {
+          case 'number':
+            store.commit(Constant('ADD_BUTTON'), { type, content: payload.buttonContent });
+            break;
+          default:
+            store.commit(Constant('ERROR'));
+        }
         break;
       case 'equal':
         // currentInputType: number, init 가능 / operator, dot 불가능
-        store.commit(Constant('CLICK_EQUAL_BUTTON'));
+        switch (store.state.currentInputType) {
+          case 'init':
+            break;
+          case 'number':
+            store.commit(Constant('EQUAL'));
+            break;
+          default:
+            store.commit(Constant('ERROR'));
+        }
         break;
       case 'all clear':
-        store.commit(Constant('CLICK_AC_BUTTON'));
+        // currentInputType: init, number, plus, minus, multiplication, division, dot 가능
+        store.commit(Constant('AC_BUTTON'));
         break;
       case 'clear error':
-        store.commit(Constant('CLICK_CE_BUTTON'));
+        // currentInputType: init, number, plus, minus, multiplication, division, dot 가능
+        switch (store.state.currentInputType) {
+          case 'init':
+            break;
+          default:
+            store.commit(Constant('CE_BUTTON'));
+        }
       default:
     }
   },
