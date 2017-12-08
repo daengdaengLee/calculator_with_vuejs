@@ -1,37 +1,49 @@
 import Constant from '../Constant';
 
 export default {
-  [Constant('CLICK_NUM_BUTTON')]: (state, payload) => {
+  [Constant('ADD_BUTTON')]: (state, payload) => {
+    // payload = { type: String, content: String }
     const storeState = state;
-    switch (storeState.currentInputType) {
-      case 'init':
-        storeState.calArray.push({ type: 'number', content: payload.content });
-        break;
-      case 'number': {
-        let temp = storeState.calArray[storeState.calArray.length - 1].content;
-        temp += payload.content;
-        storeState.calArray.splice(storeState.calArray.length - 1, 1, { type: 'number', content: temp });
-        break;
-      }
-      case 'operator':
-        storeState.calArray.push({ type: 'number', content: payload.content });
-        break;
-      default:
-    }
-    storeState.currentInputType = 'number';
+    storeState.error = false;
+    storeState.equalButton = false;
+    storeState.currentInputType = payload.type;
+    storeState.calArray.push(payload);
   },
-  [Constant('CLICK_OPERATOR_BUTTON')]: (state, payload) => {
+  [Constant('MERGE_BUTTON')]: (state, payload) => {
+    // payload = { type: String, content: String }
     const storeState = state;
-    storeState.calArray.push({ type: payload.type, content: payload.content });
-    storeState.currentInputType = 'operator';
+    storeState.error = false;
+    storeState.equalButton = false;
+    storeState.currentInputType = payload.type;
+    const temp = storeState.calArray.pop();
+    temp.content += payload.content;
+    storeState.calArray.push(temp);
   },
-  [Constant('CLICK_EQUAL_BUTTON')]: (state) => {
+  [Constant('ERROR')]: (state) => {
     const storeState = state;
-    storeState.currentInputType = 'equal';
+    storeState.error = true;
   },
-  [Constant('CLICK_CLEAR_BUTTON')]: (state) => {
+  [Constant('EQUAL')]: (state) => {
     const storeState = state;
-    storeState.calArray.splice(0);
+    storeState.error = false;
+    storeState.equalButton = true;
+  },
+  [Constant('AC_BUTTON')]: (state) => {
+    const storeState = state;
     storeState.currentInputType = 'init';
+    storeState.calArray.splice(0);
+    storeState.equalButton = false;
+    storeState.error = false;
+  },
+  [Constant('CE_BUTTON')]: (state) => {
+    const storeState = state;
+    storeState.calArray.pop();
+    if (storeState.calArray.length > 0) {
+      storeState.currentInputType = storeState.calArray[storeState.calArray.length - 1].type;
+    } else {
+      storeState.currentInputType = 'init';
+    }
+    storeState.equalButton = false;
+    storeState.error = false;
   },
 };

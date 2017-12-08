@@ -4,17 +4,23 @@ export default function (type) {
     case 'CLICK_CAL_BUTTON':
       result = 'clickCalButton';
       break;
-    case 'CLICK_NUM_BUTTON':
-      result = 'clickNumButton';
+    case 'AC_BUTTON':
+      result = 'clickACButton';
       break;
-    case 'CLICK_OPERATOR_BUTTON':
-      result = 'clickOperatorButton';
+    case 'CE_BUTTON':
+      result = 'clickCEButton';
       break;
-    case 'CLICK_EQUAL_BUTTON':
-      result = 'clickEqualButton';
+    case 'ADD_BUTTON':
+      result = 'addButton';
       break;
-    case 'CLICK_CLEAR_BUTTON':
-      result = 'clickClearButton';
+    case 'MERGE_BUTTON':
+      result = 'mergeButton';
+      break;
+    case 'ERROR':
+      result = 'error';
+      break;
+    case 'EQUAL':
+      result = 'equal';
       break;
     default:
       result = 'No Constant';
