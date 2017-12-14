@@ -23,6 +23,6 @@ export default {
   calArray: [], // { type: String, content: String }
   equalButton: false,
   error: false,
-  userUrl: 'https://daengdaenglee.github.io/',
+  userUrl: 'https://daengdaenglee.github.io/portfolio',
   codeRepoUrl: 'https://github.com/daengdaengLee/calculator_with_vuejs',
 };
