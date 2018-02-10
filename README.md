@@ -1,27 +1,28 @@
-# calculator_with_vuejs
+# 웹 계산기
 
-> A Vue.js project
+> Vue.js 를 이용해 만든 웹 계산기입니다. Vuex 를 이용하여 상태를 관리하고 있습니다.
 
-## Build Setup
+## 둘러보기
 
-``` bash
-# install dependencies
-npm install
+0. [들어가며](#0-들어가며)
+1. [데모 페이지](#1-데모-페이지)
+2. [마치며](#2-마치며)
 
-# serve with hot reload at localhost:8080
-npm run dev
+## 0. 들어가며
 
-# build for production with minification
-npm run build
+Vue.js 로 제작한 간단한 계산기 입니다. Vuex 로 계산 결과를 중앙에서 관리하고 있습니다.
 
-# build for production and view the bundle analyzer report
-npm run build --report
+계산 중에는 음수를 처리할 수 있지만, 첫 입력에서 음수를 입력할 수 없는 문제가 있습니다.
 
-# run unit tests
-npm run unit
+## 1. 데모 페이지
 
-# run all tests
-npm test
-```
+데모 페이지는 [여기](https://daengdaenglee.github.io/calculator_with_vuejs/)에서 확인할 수 있습니다.
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+로컬에서 실행할 경우 git, node.js, npm 이 필요합니다.
+  1. git 을 이용해 프로젝ㅌ를 클론합니다.
+  2. npm install 명령어로 필요한 패키지를 다운받습니다.
+  3. npm run dev 명령어로 개발 서버를 실행합니다.
+
+## 2. 마치며
+
+첫 입력으로 음수를 받을 수 있도록 조만간 업데이트 할 예정입니다.
